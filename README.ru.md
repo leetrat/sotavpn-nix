@@ -22,7 +22,7 @@ Sota Connect распространяется в виде готового Arch-
 ```nix
 {
   imports = [
-    ./modules/features/programs/vpn/sotavpn/sotavpn.nix
+    ./sotavpn.nix
   ];
 }
 ```
@@ -32,7 +32,7 @@ Sota Connect распространяется в виде готового Arch-
 ```nix
 {
   imports = [
-    ./modules/features/programs/vpn/sotavpn/_internal/sotavpn-module.nix
+    ./sotavpn-module.nix
   ];
 
   services.sotavpn.enable = true;
@@ -47,7 +47,7 @@ sudo nixos-rebuild switch
 
 ## Обновление
 
-Tarball скачивается по `-latest`-ссылке, поэтому его `sha256` зафиксирован в `_internal/sotavpn.nix`. Когда выходит новая версия, обновите хеш:
+Tarball скачивается по `-latest`-ссылке, поэтому его `sha256` зафиксирован в `sotavpn.nix`. Когда выходит новая версия, обновите хеш:
 
 ```bash
 nix hash file --type sha256 <(curl -sL https://storage.sota.ac/api/v1/public/storage/sotavpn-latest-x64.pkg.tar.zst)
