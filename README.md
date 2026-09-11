@@ -22,7 +22,7 @@ Import the feature module and it is enabled for you:
 ```nix
 {
   imports = [
-    ./modules/features/programs/vpn/sotavpn/sotavpn.nix
+    ./sotavpn.nix
   ];
 }
 ```
@@ -32,7 +32,7 @@ Or, if you prefer to wire it manually:
 ```nix
 {
   imports = [
-    ./modules/features/programs/vpn/sotavpn/_internal/sotavpn-module.nix
+    ./sotavpn-module.nix
   ];
 
   services.sotavpn.enable = true;
@@ -47,7 +47,7 @@ sudo nixos-rebuild switch
 
 ## Updating
 
-The tarball is fetched from a `-latest` URL, so its `sha256` is pinned in `_internal/sotavpn.nix`. When a new version ships, update the hash:
+The tarball is fetched from a `-latest` URL, so its `sha256` is pinned in `sotavpn.nix`. When a new version ships, update the hash:
 
 ```bash
 nix hash file --type sha256 <(curl -sL https://storage.sota.ac/api/v1/public/storage/sotavpn-latest-x64.pkg.tar.zst)
