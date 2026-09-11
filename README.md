@@ -17,17 +17,7 @@ Sota Connect ships as a prebuilt Arch package (`.pkg.tar.zst`) that assumes a re
 
 ## Installation
 
-Import the feature module and it is enabled for you:
-
-```nix
-{
-  imports = [
-    ./sotavpn.nix
-  ];
-}
-```
-
-Or, if you prefer to wire it manually:
+Import the feature module and enable the service:
 
 ```nix
 {
